@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:study_info/screens/line_painter.dart';
-import 'dart:io';
+import 'package:study_info/pages/line_painter.dart';
 
 class NotebookPage extends StatefulWidget {
   @override
