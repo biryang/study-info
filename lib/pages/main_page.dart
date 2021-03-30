@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -28,14 +29,33 @@ class MainPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset('images/cpp.svg', height: 80),
-                SvgPicture.asset('images/react.svg', height: 80),
-                SvgPicture.asset('images/flutter.svg', height: 80),
-                SvgPicture.asset('images/aws.svg', height: 80),
-                SvgPicture.asset('images/js.svg', height: 80),
-                SvgPicture.asset('images/vue.svg', height: 80),
-                SvgPicture.asset('images/firebase.svg', height: 80),
-                SvgPicture.asset('images/php.svg', height: 80),
+                Container(
+                  width: 600,
+                  height: 100,
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                      aspectRatio: 16 / 10,
+                      viewportFraction: 0.3,
+                      initialPage: 0,
+                      enableInfiniteScroll: true,
+                      autoPlay: true,
+                      autoPlayInterval: Duration(seconds: 3),
+                      autoPlayAnimationDuration: Duration(milliseconds: 800),
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enlargeCenterPage: true,
+                    ),
+                    items: [
+                      SvgPicture.asset('images/cpp.svg', height: 100),
+                      SvgPicture.asset('images/react.svg', height: 100),
+                      SvgPicture.asset('images/flutter.svg', height: 100),
+                      SvgPicture.asset('images/aws.svg', height: 100),
+                      SvgPicture.asset('images/js.svg', height: 100),
+                      SvgPicture.asset('images/vue.svg', height: 100),
+                      SvgPicture.asset('images/firebase.svg', height: 100),
+                      SvgPicture.asset('images/php.svg', height: 100),
+                    ],
+                  ),
+                ),
               ],
             ),
             Spacer(),
